@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<div id="x">
+
+	<h1>Simple Calculator</h1>
+
+	<input type="number" v-model="Entera" placeholder="Enter a">
+
+	<br><br>
+
+	<input type="number" v-model="Enterb" placeholder="Enterb">
+
+	<br><br>
+
+	<input type="number" v-model="Enterc" placeholder="Enterc">
+
+	<br><br>
+
+	<button @click="add">click me</button>
+	<button @click="subtract">Subtract</button>
+	<button @click="multiply">Multiply</button>
+	<button @click="divide">Divide</button>
+	<button @click="moduels">moduels</button>
+
+
+
+	<h2>Result:{{ result }}</h2>
+	<h2>Result:{{ result1 }}</h2>
+	<h2>Result:{{ result2 }}</h2>
+	<h2>Result:{{ result3 }}</h2>
+	<h2>Result:{{ result4 }}</h2>
+
+
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+	
+	const app=Vue.createApp({
+
+		data(){
+			return{
+				Entera:10,
+				Enterb:10,
+				Enterc:10,
+				result:0,
+				result1:0,
+				result2:0,
+				result3:0,
+				result4:0,
+
+
+			}
+		},
+
+		methods:{
+
+			add(){
+				this.result =Number(this.Entera) + Number(this.Enterb) + Number(this.Enterc)
+			},
+			subtract(){
+				this.result1 =Number(this.Entera) - Number(this.Enterb) - Number(this.Enterc)
+			},
+			multiply(){
+				this.result2 =Number(this.Entera) * Number(this.Enterb) * Number(this.Enterc)
+			},
+			divide(){
+				this.result3 =Number(this.Entera) / Number(this.Enterb)  / Number(this.Enterc)
+			},
+			moduels(){
+				this.result4 =Number(this.Entera) % Number(this.Enterb)  % Number(this.Enterc)
+			},
+
+
+
+
+		}
+	})
+
+	app.mount("#x")
+</script>
+
+</body>
+</html>
